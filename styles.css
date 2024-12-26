@@ -1,0 +1,246 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+   
+    
+}
+
+/* Navigation Bar */
+.navbar {
+    width: 100%;
+    padding: -10px 20px;
+    background-color: #007bff;
+    display: flex;
+    justify-content: space-between; /* Space between logo and toggle */
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.logo {
+    height: 40px; /* Adjust logo size */
+    margin-right: 10px; /* Space between logo and text */
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    color: white;
+    font-weight: bold;
+    margin-right: 20px; /* Space after the logo text */
+}
+
+.logo-subtext {
+    font-size: 0.8rem;
+    color: white;
+}
+/* Media Query for smaller screens (max-width: 600px) */
+@media (max-width: 600px) {
+    .logo-subtext {
+        font-size: 0.7rem; /* Change font size for smaller screens */
+    }
+}
+
+/* Mode Toggle Button */
+.mode-toggle {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem; /* Increased font-size for larger emoji */
+    cursor: pointer;
+    transition: none;
+}
+/* Media Query for smaller screens (max-width: 600px) */
+@media (max-width: 600px) {
+    .mode-toggle {
+        font-size: 1.5rem; /* Reduced font-size for small screens */
+    }
+}
+
+/* Remove hover effects, active states, and background color on the emoji container */
+.mode-toggle:hover,
+.mode-toggle:focus,
+.mode-toggle:active {
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+body.dark-mode .mode-toggle {
+    color: #fff;
+}
+
+/* QR Generator */
+.qr-generator {
+    background-color: rgb(255, 255, 255);
+    color: #333;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 410px;
+    max-height: 800px;
+    text-align: center;
+    border: 2px solid #ccc;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 150px; /* Adjust for navbar */
+}
+
+/* Media Query for small screens (max-width: 600px) */
+@media (max-width: 600px) {
+    .qr-generator {
+        max-width: 330px; /* Change max-width for smaller screens */
+        margin-top: 50px; /* Decrease margin-top to move the QR code container up */
+        
+        
+    }
+}
+
+h1, p, button, input[type="text"] {
+    transition: color 0.3s ease;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+.qr-generator h1, 
+.qr-generator p {
+    color: #333;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+button {
+    padding: 10px 42px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #32b34e;
+}
+
+/* QR Code Container */
+.qr-code-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    min-height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+/* Media Query for smaller screens (max-width: 600px) */
+@media (max-width: 600px) {
+    .qr-code-container {
+        align-items: center;
+        max-width: 270px; /* Smaller width on mobile */
+        padding: 10px; /* Less padding on mobile */
+        min-height: 180px; /* Reduced height on mobile */
+    }
+}
+
+/* Ensure QR code doesn't go outside the container */
+.qr-code-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Maintain aspect ratio */
+}
+/* Download Button Styling */
+#download-button {
+    padding: 10px 42px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#download-button:hover {
+    background-color: #32b34e;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+body.dark-mode .qr-generator {
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+}
+
+body.dark-mode .qr-code-container {
+    background-color: #222;
+    border-color: #fff;
+}
+
+body.dark-mode input[type="text"] {
+    background-color: #444;
+    border-color: #fff;
+    color: #fff;
+}
+
+/* Responsiveness */
+@media (max-width: 480px) {
+    .qr-generator {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
